@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logoIndex.jpg" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Добре дошли</title>
+</head>
+<body>
+<header>
+    <a id="logo" style="float: left;" href="/home">
+        <img  src="/images/logoChildoLand.jpg" alt="logo" style="max-width: 200px;">
+    </a>
+    <nav>
+        <ul id="field">
+            <th:block sec:authorize="!isAuthenticated()">
+                <li id="home"><a href="/start">НАЧАЛО</a></li>
+                <li id="login"><a href="/login">ВХОД</a></li>
+                <li id="logout"><a href="/register">РЕГИСТРАЦИЯ</a></li>
+            </th:block>
+            <li> <div id="house" sec:authorize="isAuthenticated()"><a  th:href="@{/home}">НАЧАЛНА СТРАНИЦА</a>
+                </div></li>
+            <li> <div id="exit" sec:authorize="isAuthenticated()"><a  th:href="@{/logout}">ИЗХОД</a>
+            </div></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <h2 th:text="'Добре дошли, ' + ${#authentication.principal.firstName} + ' ' + ${#authentication.principal.lastName} + '!'">Добре дошли!</h2>
+
+    <h2>Моля изберете дейност:</h2>
+
+    <span sec:authorize="hasRole('TEACHER')">
+    <a id="teacherGroup" class="button" th:href="@{/teacher/group}">Моята група</a><br>
+    <a id="teacherEvent" class="button" th:href="@{/saveEvent}">Създаване на събитие</a><br>
+    </span>
+
+    <span sec:authorize="hasRole('PARENT')">
+            <a id="parentChildren" class="button" th:href="@{/parent/children}">Моя профил</a><br>
+    </span>
+
+    <span id="admin" sec:authorize="hasRole('ADMIN')">
+    <a id="allGroup" class="button" th:href="@{/admin/groups}">Всички групи</a><br>
+    <a id="addGroup" class="button" th:href="@{/admin/groups-add}">Добави група</a><br>
+    <a id="addChild" class="button" th:href="@{/admin/addChild}">Добави дете</a>
+</span>
+</div>
+</body>
+    <br>
+    <footer>
+        <div class="footer">
+            &copy; ЧИЛДОЛАНД 2024
+        </div>
+    </footer>
+</html>

@@ -1,0 +1,128 @@
+/* Стил за целия документ */
+body {
+    font-family: Arial, sans-serif; /* Избор на шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #e3e3e3; /* Цвят на фона */
+}
+
+#logo {
+    margin-right: 20%; /* Разстояние между елементите */
+    padding-left: 5%;
+    transform: scale(1.7);
+}
+
+/* Стил за хедъра */
+header {
+    background-color: #e3e3e3; /* Цвят на фона */
+    padding: 20px; /* Вътрешен отстъп */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Сянка */
+    position: relative;
+}
+
+main{
+    padding: 3%;
+    background-color: #e3e3e3; /* Цвят на фона */
+
+}
+/* Стил за навигационното меню */
+
+
+/* Стил за елементите на навигационното меню */
+header nav ul li {
+    display: inline-block; /* Прави всяка елемент от списъка inline */
+    margin-right: 5%; /* Разстояние между елементите */
+}
+
+/* Стил за връзките на навигационното меню */
+header nav ul li a {
+    text-decoration: none; /* Премахване на подчертаването на връзките */
+    color: #ffa40d; /* Цвят на текста */
+    font-weight: bold; /* Удебелен текст */
+}
+
+/* Стил за футъра */
+footer {
+    background-color: #ffa40d; /* Цвят на фона */
+    color: #fff; /* Цвят на текста */
+    padding: 2.3%;
+    text-align: center; /* Центриран текст */
+        position: relative; /* Relative position */
+        bottom: 0; /* Align to the bottom */
+        width: 100%; /* Full width */
+}
+
+/* Стил за логото в хедъра */
+header a img {
+    max-width: 100px; /* Максимална ширина на логото */
+    height: auto; /* Автоматична височина */
+    vertical-align: middle; /* Центриране на вертикално */
+}
+
+/* Стил за иконите в навигационното меню */
+header nav ul li div {
+    display: inline-block; /* Прави всяка икона inline */
+    margin-right: 20px; /* Разстояние между иконите */
+    cursor: pointer; /* Промяна на курсора при навлизане с мишката */
+    fill: #ffa40d; /* Цвят на иконите */
+}
+
+#field{
+    transform: scale(1.3);
+    margin-left: 68%; /* Разстояние между иконите */
+}
+
+#house {
+    transform: scale(1.3);
+    color: #ffa40d; /* Цвят на текста */
+}
+
+#exit {
+    transform: scale(1.3);
+    padding-left: 30%;
+    color: #ffa40d; /* Цвят на текста */
+}
+
+
+#home:hover {
+    margin-left: 0.3%;
+}
+
+
+#login:hover {
+    margin-left: 0.3%;
+}
+
+
+#logout:hover {
+    margin-left: 0.3%;
+}
+
+/* Промяна на цвета на иконите при навлизане с мишката */
+#house:hover svg {
+    margin-left:3%;
+    color: #9b51c2; /* Цвят на иконите при ховър */
+}
+
+#exit:hover svg {
+    margin-left: 3%;
+    fill: #9b51c2; /* Цвят на иконите при ховър */
+}
+
+header nav ul li a:hover{
+color: #9b51c2;
+}
+
+.star-container{
+    background: #ffa409;
+    width: 35%;
+    height: 30%;
+    margin-left: 35%;
+}
+
+ h2 {
+    font-size: 20%;
+    margin-left: 43%;
+    color: #9b51c2
+
+}

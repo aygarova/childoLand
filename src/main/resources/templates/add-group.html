@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logoIndex.jpg" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/addGroup.css">
+    <title>ЧИЛДОЛАНД</title>
+</head>
+<body>
+<header>
+    <a id="logo" style="float: left;" href="/home">
+        <img  src="/images/logoChildoLand.jpg" alt="logo" style="max-width: 200px;">
+    </a>
+    <nav>
+        <ul id="field">
+            <th:block sec:authorize="!isAuthenticated()">
+                <li id="login"><a href="/login">ВХОД</a></li>
+                <li id="logout"><a href="/register">РЕГИСТРАЦИЯ</a></li>
+            </th:block>
+            <li> <div id="house" sec:authorize="isAuthenticated()"><a  th:href="@{/home}">НАЧАЛНА СТРАНИЦА</a>
+            </div></li>
+            <li> <div id="exit" sec:authorize="isAuthenticated()"><a  th:href="@{/logout}">ИЗХОД</a>
+            </div></li>
+        </ul>
+    </nav>
+</header>
+
+<br><br>
+<div class="container-apart">
+    <h2>Добави група</h2>
+    <form th:action="@{/admin/groups-add}" method="POST" th:object="${groupDto}" >
+        <div>
+            <div id="groupName" class="col-auto">
+                <label for="inputGroupName" class="col-form-label text-light">Име на групата:</label>
+            </div>
+            <div id="groupNameF" class="col-auto">
+                <input th:field="*{name}" th:errorclass="bg-danger" type="text" name="name" id="inputGroupName" class="form-control" aria-describedby="GroupNameHelpInline">
+            </div>
+            <div class="col-auto">
+                <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}" id="groupNameError" class="text-light form-text bg-danger rounded"></small>
+            </div>
+        </div>
+        <div>
+            <div id="teacher" class="col-auto">
+                <label for="inputTeacher" class="col-form-label text-light">Учител:</label>
+            </div>
+            <div id="teacherF" class="col-auto">
+                <select th:field="*{teacherEmail}" id="inputTeacher" class="form-control">
+                    <option th:each="teacher : ${teachers}" th:value="${teacher.email}" th:text="${teacher.email}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-2">
+            <button class="button" type="submit">ЗАПАЗИ</button>
+        </div>
+    </form>
+</div>
+</body>
+<br><br>
+<footer>
+    <div class="footer-r">
+        &copy; ЧИЛДОЛАНД 2024
+    </div>
+</footer>
+</html>

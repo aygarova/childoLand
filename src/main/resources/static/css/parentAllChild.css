@@ -1,0 +1,117 @@
+.myChildren{
+    background: #ffa409;
+    color: #9b51c2;
+    width: 20%;
+    margin-left: 5%;
+
+}
+
+.myChildren ul{
+     list-style: none;
+    margin-left: 12%;
+}
+
+
+.addChild{
+    background: #ffa409;
+    width: 35%;
+    height: 30%;
+    margin-top: -6%;
+    margin-bottom: 10%;
+    margin-left: 60%;
+}
+
+.emailNotif{
+    background: #ffa409;
+    width: 35%;
+    height: 30%;
+    margin-left: 60%;
+}
+
+.myChildren h2 {
+    margin-left: 27%;
+    color: #9b51c2
+
+}
+
+.addChild h2{
+    margin-left:30%;
+    color: #9b51c2;
+}
+
+.emailNotif h2{
+    margin-left:20%;
+    color: #9b51c2;
+}
+
+.form-container .form-text {
+    height: 3%;
+    margin-top: 5%;
+}
+
+.button{
+    width: 20%;
+    height: 60%;
+    margin-left: -3%;
+    margin-top: 12%;
+    background-color: #9b51c2;
+    color: #e3e3e3;
+}
+
+.button:hover{
+    background-color: #e3e3e3;
+    color: #9b51c2;
+}
+
+
+.form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-container form {
+    margin-bottom: 20px;
+}
+
+.form-container .form-text {
+    font-size: 12%;
+    margin-top: 5%;
+}
+
+#child{
+    margin-left: 5%;
+    margin-right: 5%;
+    transform: scale(1.1);
+    background-color: #9b51c2;
+    color: #e3e3e3;
+}
+
+#addChildB{
+    margin-left: 5%;
+    margin-right: 5%;
+    transform: scale(1.1);
+    background-color: #9b51c2;
+    color: #e3e3e3;}
+
+#notif{
+    margin-left: 5%;
+    margin-right: 5%;
+    transform: scale(1.1);
+    background-color: #9b51c2;
+    color: #e3e3e3;
+}
+
+#child:hover{
+    background-color: #e3e3e3;
+    color: #9b51c2;
+}
+
+#addChildB:hover{
+    background-color: #e3e3e3;
+    color: #9b51c2;
+    }
+
+#notif:hover{
+    background-color: #e3e3e3;
+    color: #9b51c2;
+}

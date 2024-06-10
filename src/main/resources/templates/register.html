@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" type="image/x-icon" href="/images/logoIndex.jpg" />
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/register.css">
+<title>РЕГИСТРАЦИЯ</title>
+</head>
+<body>
+<header>
+    <a id="logo" style="float: left;" href="/home">
+        <img  src="/images/logoChildoLand.jpg" alt="logo" style="max-width: 200px;">
+    </a>
+    <nav>
+        <ul id="field">
+            <th:block sec:authorize="!isAuthenticated()">
+                <li id="home"><a href="/start">НАЧАЛО</a></li>
+                <li id="login"><a href="/login">ВХОД</a></li>
+                <li id="logout"><a href="/register">РЕГИСТРАЦИЯ</a></li>
+            </th:block>
+            <li> <div id="house" sec:authorize="isAuthenticated()"><a  th:href="@{/home}">НАЧАЛНА СТРАНИЦА</a>
+            </div></li>
+            <li> <div id="exit" sec:authorize="isAuthenticated()"><a  th:href="@{/logout}">ИЗХОД</a>
+            </div></li>
+        </ul>
+    </nav>
+</header>
+<div class="container">
+<h2>Моля изберете вашата роля:</h2>
+<span id="role">
+    <a class="button" th:href="@{/parent-register}">АЗ СЪМ РОДИТЕЛ</a><br>
+    <a class="button" th:href="@{/teacher-register}">АЗ СЪМ УЧИТЕЛ</a><br>
+</span>
+</div>
+</body>
+<footer>
+    <div class="footer">
+        &copy; ЧИЛДОЛАНД 2024
+    </div>
+</footer>
+</html>

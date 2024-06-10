@@ -1,0 +1,91 @@
+.login-container{
+    background: #ffa409;
+    width: 35%;
+    height: 30%;
+    margin-left: 35%;
+}
+
+.login-container h2 {
+    font-size: 20%;
+    margin-left: 43%;
+    color: #9b51c2
+
+}
+
+.login-container .form-text {
+    height: 3%;
+    margin-top: 5%;
+}
+
+.button{
+    width: 20%;
+    height: 60%;
+    margin-left: -3%;
+    margin-top: 12%;
+    background-color: #9b51c2;
+    color: #e3e3e3;
+}
+
+.button:hover{
+    background-color: #e3e3e3;
+    color: #9b51c2;
+}
+
+
+.login-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    margin-bottom: 20px;
+}
+
+.login-container .form-text {
+    font-size: 12%;
+    margin-top: 5%;
+}
+
+#emailField{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#passField{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#role{
+    width: 100%;
+}
+
+#emailName{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#passName{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#roleName{
+    margin-left: 5%;
+    width: 90%;
+}
+
+#invalidEmail{
+padding-bottom: 7%;
+    font-size: 20px;
+}
+
+#emailErr{
+    padding-bottom: 7%;
+        font-size: 20px;
+}
+
+#passErr{
+    padding-bottom: 7%;
+        font-size: 20px;
+}

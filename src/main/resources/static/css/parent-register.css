@@ -1,0 +1,73 @@
+/* Стил за целия документ */
+body {
+    font-family: Arial, sans-serif; /* Избор на шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #e3e3e3; /* Цвят на фона */
+}
+
+/* Стил за основния контейнер */
+.registration-container {
+    max-width: 800px; /* Максимална ширина на контейнера */
+    margin: 0 auto; /* Центриране на контейнера */
+    padding: 3%; /* Вътрешен отстъп */
+    background-color: #ffa40d; /* Цвят на фона */
+    border-radius: 5px; /* Закръглен край */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Сянка */
+}
+
+.registration-container.form-text {
+                            height: 3%;
+                            margin-top: 5%;
+}
+
+/* Стил за малките текстове */
+.small-text {
+    font-size: 12px; /* Големина на шрифта */
+    color: #9b51c2; /* Цвят на текста */
+}
+
+/* Стил за формулярните полета */
+.form-control {
+    width: 100%; /* Ширина на полетата */
+    padding: 10px; /* Вътрешен отстъп */
+    margin-bottom: 20px; /* Отстояние между полетата */
+    border: 1px solid #ccc; /* Граница */
+    border-radius: 5px; /* Закръглен край */
+}
+
+/* Стил за бутона за регистрация */
+.button {
+    padding: 10px 20px; /* Вътрешен отстъп */
+    background-color: #9b51c2;
+    color: #e3e3e3;
+    border: none; /* Без граница */
+    border-radius: 5px; /* Закръглен край */
+    cursor: pointer; /* Курсор при ховър */
+    transition: background-color 0.3s; /* Плавна промяна на цвета на фона */
+}
+
+/* Промяна на цвета на бутона при ховър */
+.button:hover {
+    background-color: #e3e3e3;
+    color: #9b51c2;}
+
+/* Стил за футъра */
+footer {
+    background-color: #ffa40d; /* Цвят на фона */
+    color: #fff; /* Цвят на текста */
+    padding: 20px; /* Вътрешен отстъп */
+    text-align: center; /* Центриран текст */
+    border-radius: 5px; /* Закръглен край */
+}
+
+
+#title {
+    padding-left: 25%;
+color: #9b51c2;
+        font-size: 30px;
+}
+
+#butt{
+    padding-left: 41%;
+}

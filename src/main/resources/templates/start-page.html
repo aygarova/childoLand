@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logoIndex.jpg" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>ЧИЛДОЛАНД</title>
+</head>
+<body>
+
+<header>
+    <a id="logo" style="float: left;" href="/home">
+        <img  src="/images/logoChildoLand.jpg" alt="logo" style="max-width: 200px;">
+    </a>
+    <nav>
+        <ul id="field">
+            <th:block sec:authorize="!isAuthenticated()">
+                <li id="home"><a href="/start">НАЧАЛО</a></li>
+                <li id="login"><a href="/login">ВХОД</a></li>
+                <li id="logout"><a href="/register">РЕГИСТРАЦИЯ</a></li>
+            </th:block>
+            <li> <div id="house" sec:authorize="isAuthenticated()"><a  th:href="@{/home}">НАЧАЛНА СТРАНИЦА</a>
+            </div></li>
+            <li> <div id="exit" sec:authorize="isAuthenticated()"><a  th:href="@{/logout}">ИЗХОД</a>
+            </div></li>
+        </ul>
+    </nav>
+</header>
+
+    <div class="start-container">
+        <p>
+            <b>Чилдоланд</b> е приложение разработено за удобството и спокойствието на родителите, докато техните деца са на детска градина.
+        </p>
+        <p>
+            Чрез <b>Чилдоланд</b> родителите могат да получава имейли за дневното състояние на тяхното дете и предстоящите занимания, които го очакват.
+        </p>
+
+    </div>
+
+</body>
+</html>

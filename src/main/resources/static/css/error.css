@@ -1,0 +1,24 @@
+ h2{
+    margin-left: 40%;
+    text-decoration: none;
+    color: #ffa40d;
+}
+
+ h3{
+    margin-left: 20%;
+    text-decoration: none;
+    color: #9b51c2;
+}
+
+.error-403{
+    margin-left: 330px;
+}
+
+.error-404{
+    margin-left: 330px;
+}
+
+.error-500{
+    margin-left: 391px;
+    width: 600px;
+}

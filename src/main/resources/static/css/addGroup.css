@@ -1,0 +1,68 @@
+.container-apart{
+    background: #ffa409;
+    width: 35%;
+    height: 30%;
+    margin-left: 35%;
+}
+
+.container-apart h2 {
+    font-size: 20%;
+    margin-left: 35%;
+    padding-top: 3%;
+    color: #9b51c2
+
+}
+
+.container-apart .form-text {
+    height: 3%;
+    margin-top: 5%;
+}
+
+.button{
+    width: 20%;
+    height: 60%;
+    margin-left: -3%;
+    margin-top: 12%;
+    background-color: #9b51c2;
+    color: #e3e3e3;
+}
+
+.button:hover{
+    background-color: #e3e3e3;
+    color: #9b51c2;
+}
+
+
+.container-apart h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.container-apart form {
+    margin-bottom: 20px;
+}
+
+.container-apart .form-text {
+    font-size: 12%;
+    margin-top: 5%;
+}
+
+#groupName{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#teacher{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#groupNameF{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#teacherF{
+    margin-left: 5%;
+    margin-right: 5%;
+}

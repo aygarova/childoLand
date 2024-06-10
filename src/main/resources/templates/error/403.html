@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logoIndex.jpg" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/error.css">
+    <title>ЧИЛДОЛАНД</title>
+</head>
+<body>
+
+<header>
+    <a id="logo" style="float: left;" href="/home">
+        <img  src="/images/logoChildoLand.jpg" alt="logo" style="max-width: 200px;">
+    </a>
+    <nav>
+        <ul id="field">
+            <th:block sec:authorize="!isAuthenticated()">
+                <li id="login"><a href="/login">ВХОД</a></li>
+                <li id="logout"><a href="/register">РЕГИСТРАЦИЯ</a></li>
+            </th:block>
+            <li> <div id="house" sec:authorize="isAuthenticated()"><a  th:href="@{/home}">НАЧАЛНА СТРАНИЦА</a>
+            </div></li>
+            <li> <div id="exit" sec:authorize="isAuthenticated()"><a  th:href="@{/logout}">ИЗХОД</a>
+            </div></li>
+        </ul>
+    </nav>
+</header>
+<h2><b>ВЪЗНИКНА ПРОБЛЕМ</b></h2>
+<h3>ERROR 403! Опитвате се да достъпите ресурс, до който нямате права.</h3>
+<img class="error-403" src="/images/403.jpg">
+</body>
+</html>

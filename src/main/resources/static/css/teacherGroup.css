@@ -1,0 +1,113 @@
+.form-container {
+    width: 70%;
+    background-color: #ffa40d; /* White background for contrast */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+        margin-top: 4%; /* Space from top */
+    margin-left: 17%;
+    margin-bottom: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+}
+
+/* Headings styling */
+.form-container h2 {
+    color: #9b51c2; /* Purple color for headings */
+    text-align: center;
+    margin-bottom: 20px; /* Space below headings */
+    font-size: 24px; /* Font size for headings */
+}
+
+.form-container h3 {
+    color: #9b51c2; /* Purple color for headings */
+    text-align: center;
+    margin-bottom: 20px; /* Space below headings */
+    font-size: 24px; /* Font size for headings */
+}
+
+/* Span styling for authorized actions */
+.form-container span {
+    display: inline-block;
+    margin-right: 20px; /* Space between items */
+}
+
+.form-container span a {
+    text-decoration: none;
+    color: #e3e3e3;; /* Orange color for links */
+    font-weight: bold;
+padding-bottom: 3%;
+}
+
+.form-container span a svg {
+    fill: #ffa40d; /* Fill color for icons */
+}
+
+.form-container span a svg:hover {
+    fill: #9b51c2; /* Hover color for icons */
+}
+
+/* Admin links styling */
+/* General button styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px; /* Padding for size */
+    margin: 5px; /* Margin for spacing between buttons */
+    font-size: 16px; /* Font size for readability */
+    font-weight: bold; /* Bold text */
+    color: #fff; /* White text color */
+    background-color: #ffa40d; /* Background color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from links */
+    text-align: center; /* Center text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    text-align: center;
+}
+
+/* Hover effect for buttons */
+.button:hover {
+    background-color: #9b51c2; /* Darker background on hover */
+    color: #e3e3e3; /* Light text color on hover */
+}
+
+/* Focus effect for accessibility */
+.button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px #9b51c2; /* Custom focus outline */
+}
+
+
+#allGroup{
+    display: inline-block;
+    margin-right: 20px; /* Space between items */
+    text-align: center;
+}
+
+#children{
+    display: inline-block;
+}
+
+#buttonChange{
+    background-color: #9b51c2;
+    color: #e3e3e3;
+}
+
+#buttonChange:hover{
+background-color: #e3e3e3;
+color: #9b51c2;
+}
+
+#buttonSent{
+    background-color: #9b51c2;
+    color: #e3e3e3;
+}
+
+#buttonSent:hover{
+    background-color: #e3e3e3;
+    color: #9b51c2;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logoIndex.jpg" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/childProfil.css">
+    <title>ЧИЛДОЛАНД</title>
+</head>
+<body>
+<header>
+    <a id="logo" style="float: left;" href="/home">
+        <img  src="/images/logoChildoLand.jpg" alt="logo" style="max-width: 200px;">
+    </a>
+    <nav>
+        <ul id="field">
+            <th:block sec:authorize="!isAuthenticated()">
+                <li id="login"><a href="/login">ВХОД</a></li>
+                <li id="logout"><a href="/register">РЕГИСТРАЦИЯ</a></li>
+            </th:block>
+            <li> <div id="house" sec:authorize="isAuthenticated()"><a  th:href="@{/home}">НАЧАЛНА СТРАНИЦА</a>
+            </div></li>
+            <li> <div id="exit" sec:authorize="isAuthenticated()"><a  th:href="@{/logout}">ИЗХОД</a>
+            </div></li>
+        </ul>
+    </nav>
+</header>
+<div class="format-container">
+    <br>
+    <h2><b>Детайли за дете</b>></h2>
+<div>
+    <p><strong>Име:</strong> <span th:text="${children.firstName}"></span></p>
+    <p><strong>Фамилия:</strong> <span th:text="${children.lastName}"></span></p>
+    <p><strong>Възраст:</strong> <span th:text="${children.age}"></span></p>
+    <p><strong>Група:</strong> <span th:text="${children.group}"></span></p>
+    <p><strong>Пол:</strong> <span th:text="${children.gender}"></span></p>
+    <p><strong>Учител:</strong> <span th:text="${children.teacherName}"></span></p>
+    <p><strong>Събития:</strong> <span th:text="${children.events}"></span>
+    </p>
+</div>
+</div>
+
+<div class="state-container">
+    <h2><b>Състояния на дете</b></h2>
+<form th:action="@{/parent/children/profile}" method="get" id="dateForm">
+    <input type="hidden" name="childId" th:value="${param.childId}" />
+    <label for="date">Избери дата:</label>
+    <select id="date" name="date" onchange="submitForm()">
+        <option value="">Изберете дата</option> <!-- Статична опция за "Изберете дата" -->
+        <option th:each="entry : ${statesByDay}"
+                th:value="${entry.key}"
+                th:text="${#dates.format(T(java.util.Date).from(entry.key.atStartOfDay(T(java.time.ZoneId).systemDefault()).toInstant()), 'yyyy-MM-dd')}">Дата</option>
+    </select>
+</form>
+
+<div th:if="${selectedDate != null}">
+    <h3><b>Състояния за <span th:text="${selectedDate}"></span></b></h3>
+    <ul>
+        <li th:each="state : ${statesForSelectedDate}">
+            <option th:value="${state.timestamp}">
+                <span th:text="${#dates.format(T(java.util.Date).from(state.timestamp.atZone(T(java.time.ZoneId).systemDefault()).toInstant()), 'dd-MM-yyyy HH:mm')}"></span>
+            </option> - <span th:text="${state.state.description}"></span>
+        </li>
+    </ul>
+</div>
+</div>
+<script>
+    function submitForm() {
+        document.getElementById("dateForm").submit();
+    }
+</script>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer>
+    <div class="footer">
+        &copy; ЧИЛДОЛАНД 2024
+    </div>
+</footer>
+</html>

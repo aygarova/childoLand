@@ -1,0 +1,28 @@
+.format-container{
+    background: #ffa409;
+    width: 30%;
+    margin-left: 5%;
+}
+
+.format-container h2 {
+    margin-left: 20%;
+    color: #9b51c2;
+}
+
+.format-container p{
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.format-container .form-text {
+    height: 3%;
+    margin-top: 5%;
+}
+
+.state-container {
+    margin-left: 60%;
+    margin-top: -24%;
+    background: #ffa409;
+    width: 35%;
+    color: #9b51c2;
+}

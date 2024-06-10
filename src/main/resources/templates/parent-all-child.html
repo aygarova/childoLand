@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logoIndex.jpg" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/parentAllChild.css">
+    <title>РЕГИСТРАЦИЯ НА РОДИТЕЛ</title>
+</head>
+<body>
+<header>
+    <a id="logo" style="float: left;" href="/home">
+        <img  src="/images/logoChildoLand.jpg" alt="logo" style="max-width: 200px;">
+    </a>
+    <nav>
+        <ul id="field">
+            <th:block sec:authorize="!isAuthenticated()">
+                <li id="home"><a href="/start">НАЧАЛО</a></li>
+                <li id="login"><a href="/login">ВХОД</a></li>
+                <li id="logout"><a href="/register">РЕГИСТРАЦИЯ</a></li>
+            </th:block>
+            <li> <div id="house" sec:authorize="isAuthenticated()"><a  th:href="@{/home}">НАЧАЛНА СТРАНИЦА</a>
+            </div></li>
+            <li> <div id="exit" sec:authorize="isAuthenticated()"><a  th:href="@{/logout}">ИЗХОД</a>
+            </div></li>
+        </ul>
+    </nav>
+</header>
+<br>
+<div class="myChildren">
+    <h2><b>Моите деца</b></h2>
+    <ul>
+    <li th:each="child : ${children}">
+        <form th:action="@{/parent/children/profile}" method="get">
+            <input type="hidden" name="childId" th:value="${child.id}" />
+            <button id="child" type="submit">
+                <span th:text="${child.firstName}"></span>
+                <span th:text="${child.lastName}"></span>
+            </button>
+        </form>
+    </li>
+</ul>
+<br><br>
+</div>
+<div class="addChild">
+<h2><b>Добави дете по ЕГН</b></h2>
+<form th:action="@{/parent/children/add}" method="post">
+    <label for="childId">Въведи ЕГН на дете:</label>
+    <input type="text" id="childId" name="childId" required />
+    <button id="addChildB" type="submit">Добави дете</button>
+</form>
+    <br><br>
+
+</div>
+<div class="emailNotif">
+<h2><b>Настройки за имейл известия</b></h2>
+<form th:action="@{/parent/children/update-email-preferences}" method="post">
+    <label for="isActive">Активиране на имейл известия:</label>
+    <input type="checkbox" id="isActive" name="isActive" th:checked="${parent.isActive}" />
+    <button  id="notif" type="submit">Запази промените</button>
+</form>
+    <br><br>
+</div>
+</body>
+<br>
+<footer>
+    <div class="footer-r">
+        &copy; ЧИЛДОЛАНД 2024
+    </div>
+</footer>
+</html>

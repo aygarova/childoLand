@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/logoIndex.jpg" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/teacherGroup.css">
+    <title>ЧИЛДОЛАНД</title>
+</head>
+<body>
+<header>
+    <a id="logo" style="float: left;" href="/home">
+        <img  src="/images/logoChildoLand.jpg" alt="logo" style="max-width: 200px;">
+    </a>
+    <nav>
+        <ul id="field">
+            <th:block sec:authorize="!isAuthenticated()">
+                <li id="home"><a href="/start">НАЧАЛО</a></li>
+                <li id="login"><a href="/login">ВХОД</a></li>
+                <li id="logout"><a href="/register">РЕГИСТРАЦИЯ</a></li>
+            </th:block>
+            <li> <div id="house" sec:authorize="isAuthenticated()"><a  th:href="@{/home}">НАЧАЛНА СТРАНИЦА</a>
+            </div></li>
+            <li> <div id="exit" sec:authorize="isAuthenticated()"><a  th:href="@{/logout}">ИЗХОД</a>
+            </div></li>
+        </ul>
+    </nav>
+</header>
+
+<br><br>
+<div class="form-container">
+    <h2>Група: <b><span th:text="${group.name}"></span></b></h2>
+    <h3>Учител: <b><span th:text="${group.teacher.firstName}"></span>
+    <span th:text="${group.teacher.lastName}"></span></b>
+</h3>
+<h3>Деца:</h3>
+<ul>
+    <!-- Извеждаме всички ученици -->
+    <li id="children" th:each="child : ${group.child}">
+        <span th:text="${child.firstName}"></span>
+        <span th:text="${child.lastName}"></span>
+
+        <form th:action="@{/teacher/children/changeState}" method="post" style="display:inline;">
+            <input type="hidden" name="childId" th:value="${child.id}" />
+            <select name="state">
+                <option th:each="state : ${T(com.kindergarten.kindergarten.enums.State).values()}"
+                        th:value="${state.name()}"
+                        th:text="${state.getDescription()}"></option>
+            </select>
+            <button id="buttonChange" type="submit">Промени състоянието</button>
+        </form>
+
+        <form th:action="@{/teacher/sendReport}" method="post" style="display:inline;">
+            <input type="hidden" name="childId" th:value="${child.id}" />
+            <button id= "buttonSent" type="submit">Изпрати отчет</button>
+        </form>
+    </li>
+</ul>
+</div>
+<br>
+<footer>
+    <div class="footer">
+        &copy; ЧИЛДОЛАНД 2024
+    </div>
+</footer>
+</body>
+</html>
